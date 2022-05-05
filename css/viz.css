@@ -1,0 +1,271 @@
+.countries {
+    fill: #CCC;
+    stroke: #FFF;
+    stroke-width: 1px;
+}
+
+.gratLines {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1px;
+}
+
+.gratBackground {
+    fill: #f7fbff;
+}
+
+.map {
+    border: medium solid #999;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    /* margin: 10px 0 0 20px; */
+}
+
+.selectStates {
+    stroke: #000;
+    stroke-width: 1px;
+    stroke-linecap: round;
+}
+
+.firePolygons {
+    stroke: #000;
+    stroke-width: 1px;
+    stroke-linecap: round;
+}
+.chart {
+    float: right;
+    margin: 7px 20px 0 0;
+}
+
+.chartCost {
+    float: right;
+    margin: 7px 20px 0 0;
+}
+.chartTitle {
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+.chartTitleCost {
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.chartBackground {
+    fill: transparent;
+}
+.chartBackgroundCost {
+    fill: transparent;
+}
+
+.chartFrame {
+    fill: none;
+    stroke: #999;
+    stroke-width: 0;
+    shape-rendering: crispEdges;
+}
+.chartFrameCost {
+    fill: none;
+    stroke: #999;
+    stroke-width: 0;
+    shape-rendering: crispEdges;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #999;
+    stroke-width: 1px;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 0.8em;
+    fill: black;
+}
+
+.dropdown {
+    /* position: absolute; */
+    top: 30px;
+    left: 40px;
+    z-index: 10;
+    font-family: sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 2px;
+    border: 1px sold #999;
+    box-shadow: 2px 2px 4px #999;
+}
+
+option {
+    font-weight: normal;
+}
+
+.infolabel {
+    position: absolute;
+    height: 50px;
+    min-width: 100px;
+    color: #5d5d89;
+    background-color: #fff5f0;
+    border: solid medium #fc9272;
+    border-radius: 10px;
+    padding: 5px 10px;
+    top: -75px;
+}
+
+.infolabel h2 {
+    margin: 0 20px 0 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 1em;
+}
+.firelabel {
+    position: absolute;
+    height: 50px;
+    min-width: 100px;
+    color: #67a9cf;
+    background-color: #f6eff7;
+    border: solid medium #02818a;
+    border-radius: 10px;
+    padding: 5px 10px;
+    top: -75px;
+}
+
+.firelabel h2 {
+    margin: 0 20px 0 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 1em;
+}
+.main-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+/* #container{
+    /* display: block;
+    width: 960px;
+    position: relative;
+    text-align: left;
+    margin: auto;
+}
+
+#container p{
+    font-size: 12pt;
+}
+
+#map-container{
+    width: 500px;
+    margin-top: 0;
+   /* margin-left: 117px;
+    clear:both;
+    color:#3B3B3B;
+}
+
+#chart-container{
+    order: 3;
+    width: 500px;
+    margin-top: 0;
+    margin-left: 625px;
+    position:absolute;
+    float: right;
+    clear:both;
+    color:#3B3B3B;
+
+}
+
+*/
+
+.info-panel{
+    flex: 1;
+    order: 1;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: #e5d9d5;
+    border-color: #444444;
+    border-style: solid;
+    border-width: thin;
+    height: 100%;
+}
+.accordionTopHeader {
+    margin-top: 5px;
+    background-color:#42332a;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+.accordionSection1 {
+    margin-top: 5px;
+    background-color:#42332a;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+.accordionSection2 {
+    margin-top: 5px;
+    background-color: #42332a;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+
+.active, .accordionSection1:hover {
+    background-color: #42332a;
+}
+
+.active, .accordionSection2:hover {
+    background-color: #42332a;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: #e5d9d5;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    width: 100%;
+}
+
+.panel p {
+    color: #444;
+}
+
+
+.map-container {
+    flex: 2;
+    order: 2;
+}
+
+.chart-container {
+    flex: 1;
+}
+.chart-containerCost {
+
+}
+#map-dropdown {
+    margin: 10px 0 0 10px;
+}

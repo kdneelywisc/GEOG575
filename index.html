@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Forest Fire Visualizer</title>
+
+	<link rel="stylesheet"  type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css">
+	<link rel="stylesheet" type="text/css" href="css/viz.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="splash" class="splash">
+		<button id="splash-close-btn" class ="splash-close-btn">Close</button>
+		<div class="splash-heading">
+			<h2>Welcome!</h2>
+            <br>
+		</div>
+		<p>Thank you for checking out the Forest Fire Visualizer.</p>
+		<p>This tool is designed to help you learn about historically significant forest fires,
+		as well as educate you on how you can help prevent forest fires. 
+        <br>Click on the tabs to the left to learn more.</p>
+        <br><img src="img/smokeyBearSmall.png" alt="Smokey Bear Icon" align="middle" width="50" height="50" style="margin:0px 200px 0px">
+	</div>
+
+	<div class="data-page-splash" hidden>
+		<button id="data-close-btn" class ="splash-close-btn">Close</button>
+		<div class="splash-heading">
+			<h2>Data Sources</h2>
+		</div>
+		<ul class="data-list">
+			<li><p>Forest fire spatial data: </p><a target="_blank" href="https://www.nifc.gov/index.html">National Interagency Fire Center</a></li>
+			<li><p>Other Data: </p><a target="_blank" href="https://en.wikipedia.org/wiki/List_of_wildfires">Major Wildfires Wikipedia</a>, 
+            <a target="_blank" href="https://fas.org/sgp/crs/misc/IF10244.pdf">Congressional Wildfire Statistics</a></li>
+		</ul>
+
+
+	</div>
+
+	<div class="navbar">
+		<header class="header">
+			<h1><i>FOREST FIRE VISUALIZER</i></h1>
+			<img src="img/Forest-Service-Logo.png" alt="Forest Service Shield" align="middle" width="46" height="50">
+			<button id="header-button" class="header-button">Links</button>
+		</header>
+	</div>
+
+	<div id="header-dropdown-menu" class="header-dropdown-menu">
+		<ul>
+			<li id="about-menu-item">
+				<a href="#">About</a>
+			</li>
+			<li>
+				<a target="_blank" href="https://github.com/KJGEOG575/GEOG_575_Final_Project">Project Source Code</a>
+			</li>
+			<li>
+				<a id="data-menu-item" href="#">Data Sources</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="main-container">
+		<div id="map-container" class="map-container"></div>
+			<div id="map-dropdown"></div>
+        
+		<div class="info-panel">
+            <button class="accordionTopHeader">National Overview</button>
+                <div class="panel">
+                    <p class="panelcontent">Wildfires are unplanned and unwanted fires, including
+                    lightning-caused fires, unauthorized human-caused fires,
+                    and escaped prescribed fire projects.  Every year since 2000, an average of 72,400
+                    wildfires burned an average of 7.0 million acres. This figure
+                    is nearly double the average annual acreage burned in the
+                    1990s.
+                    <img src="img/wildfire_acres_burned.png" alt="NIFC Bar Graph" align="middle" width="auto" height="auto">
+                    The Forest Service within the U.S. Department of Agriculture, carries out wildfire management and response across the 193 million acres of the National Forest System.
+                    </p>
+			     </div>
+
+			<button class="accordionSection1">Wildfire Destruction by State</button>
+			<div class="panel">
+                <div class = "year-dropdown"></div>
+                <div id="chart-container" class="chart-container"></div>
+                
+				<p class="panelcontent">More wildfires occur in the east and in central states, but the wildfires in the west are larger and burn more acreage.The highest states are Alaska, Arizona, California, Colorado, Idaho, Montana, New Mexico, Nevada, Oregon, Utah, and Washington.<br><br>
+
+                    In 2018, nearly 36,200 fires burned 1.7 million acres in the east, compared with nearly 22,000 wildfires that burned more than 7.0 million acres in the west. In the east, where there is less federal acreage, most of the fires occur on nonfederal lands. This is in stark contrast to the west most of the fires occur on federal lands. In 2018, 87% (1.5 million acres) of the acreage burned in the East was on nonfederal land, whereas 63% (4.4 million acres) of the acreage burned in the west was on federal land. 
+                </p>
+			</div>
+
+			<button class="accordionSection2">Major Wildfires and Their Cost</button>
+			<div class="panel">
+                <div class = "cost-dropdown"></div>
+                <div id="chart-containerCost" class="chart-containerCost"></div>
+				<p class="panelcontent">Acreage
+                    burned also does not indicate the severity of the wildfire or
+                    the degree of impact to the forest, soils, or any other
+                    ecological effects.
+                    Although wildfires may have a beneficial impact on
+                    ecological resources, wildfires also may have a devastating
+                    impact, especially for those communities affected by
+                    wildfire activity. </p>
+			</div>
+
+			<button class="accordionSection2">Causes and Prevention</button>
+			<div class="panel">
+				<p class="panelcontent">Not all forest fires are bad, and many are controlled, prescribed burns to keep the forests healthy and to prevent worse, uncontrolled fires. However, those uncontrolled wildfires have the potential to be very destructive. As this visualizer has shown the destruction caused by out of control should be avoided at all costs. The best way to avoid them is through prevention. Please carefully read these 7 easy steps to do your part in preventing forest fires.<br><br>
+                <strong>1. Report unattended fires</strong><br> 
+                If you are ever out and about and notice a fire that is burning out of control or is unattended, immediately call 911 or your local fire department . When the conditions are right, even a small campfire can turn into a massive fire. .”See something? Say something,” is one of the key wildfire prevention methods
+                <br><br>
+                <strong>2. Extinguish fire pits and campfires when done</strong><br>  
+                Many people wonder how to prevent wildfires, but the easiest way is to be careful when having a campfire or using a fire pit. A fire should never be left unattended for any period. Also, when you are done with the fire, then make sure you completely extinguish it. Use water or ashes to put out the flames. Keep tents and sleeping gear away from any fire pit or campfire to ensure you don’t add fuel to the fire . Loose kindling and branches around the campsite can feed the flames. To prevent wildfires, you should tidy up the area to make sure there is nothing that could catch fire from an errant spark.
+                <br><br>
+                <strong>3.  Don’t throw lit cigarettes out of your moving car</strong><br> 
+                Never throw lit cigarettes, smoking materials, or matches out of your car, or on the ground. Cigarettes and matches both have enough heat to create a spark. Make sure any cigarettes are completely extinguished before you throw them in the trash. Many wildfires can start by carelessly flicking a cigarette butt on the ground, especially during dangerously dry conditions.
+                <br><br>
+                <strong>4.  Use caution when using flammable liquids</strong><br> 
+                When using propane to refill stoves, lanterns, or heaters, make sure you use  extreme caution. Wait to fill these devices once they have completely cooled. Any flammable liquids can quickly ignite a lantern. Additionally, these should be filled outside rather than inside.
+                <br><br>
+                <strong>5.  Pay attention to local ordinances for trash burning</strong><br> 
+                If you burn your trash, then you need to make sure that you follow your local ordinances. Most areas will have restrictions when it’s windy, or there are dangerous conditions that can spark a wildfire. Make sure to have a fire extinguisher with you when you burn anything so that you can put out the flames if necessary. If you have any flammable materials in your yard, remove them before you burn any trash or rubbish.
+                <br><br>
+                <strong>6.  Only use fireworks in clear areas with no woods nearby</strong><br> 
+                Wildfire prevention techniques can be difficult when most people don't realize the harm involved. For instance, during the 4th of July holiday season, people love sparklers and other fireworks. However, these things should never be used unless there is a wide-open space with no flammable materials nearby. Also, check with your local ordinances as many restrict fireworks altogether.
+                <br><br>
+                <strong>7.  Pay attention to the risk of forest fires in your area</strong><br> 
+                Always check the local forecast to learn about fire safety alerts. The U.S. Forest Service mascot is Smokey The Bear, and there is a risk posted wherever his statue is located near wooded areas. Regions in California and other places around the county post the risk for forest fires daily. 
+                <br><br>
+                <strong>Only YOU can prevent Forest Fires</strong> </p>
+                <img src="img/smokeyBear.png" alt="Smokey the Bear" align="middle" width="400" height="900">
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+	<script src="https://d3js.org/topojson.v2.min.js"></script>
+	<script src='https://unpkg.com/simple-statistics@7.0.7/dist/simple-statistics.min.js'></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"></script> <!-- integrity and crossorigin atts ensure browsers will acccept this CDN script-->
+    <!--<script type="text/javascript" src="js/viz.js"></script>-->
+    <script type="text/javascript" src="js/viz_csvBuild.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+</body>
+</html>
